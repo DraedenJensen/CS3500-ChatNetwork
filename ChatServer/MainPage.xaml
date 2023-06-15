@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<!-- Author:    Draeden Jensen and John Haraden
+     Date:      03-23-2023
+     Course:    CS 3500, University of Utah, School of Computing
+     Copyright: CS 3500, Draeden Jensen, and John Haraden - This work may not 
+                be copied for use in Academic Coursework.
+
+     We, Draeden Jensen and John Haraden, certify that this code was written from scratch and
+     we did not copy it in part or whole from another source.  All 
+     references used in the completion of the assignments are cited 
+     in the README file.
+
+     File Contents:
+     Contains a graphical user interface for a server window which represents a chat server.
+     This file contains the XML code for creating the visual elements. 
+-->
+
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ChatServer.MainPage">
+
+    <HorizontalStackLayout
+            Spacing="25"
+            Padding="60,0"
+            HorizontalOptions="Start">
+
+        <VerticalStackLayout VerticalOptions="Fill">
+            <Label Text="Participants" VerticalOptions="Center" Margin="15"/>
+            <Editor x:Name="CurrentParticipants" HeightRequest="300" WidthRequest="380" IsReadOnly="True" Margin="15"/>
+            <Button x:Name="StartShutdownButton" Text="Start Server" WidthRequest="400" HeightRequest="40" Margin="15" Clicked="OnClickConnectToServer"/>
+        </VerticalStackLayout>
+
+        <VerticalStackLayout>
+            <HorizontalStackLayout WidthRequest="500" Padding="15">
+                <Label x:Name="ServerNameLabel" HorizontalOptions="Center" VerticalOptions="Center" Padding="5"/>
+                <Entry x:Name="ServerNameEntry" WidthRequest="200" HeightRequest="40" HorizontalOptions="End"/>
+            </HorizontalStackLayout>
+            
+            <HorizontalStackLayout WidthRequest="500" Padding="15">
+                <Label x:Name="IPAddressLabel" HorizontalOptions="Center" VerticalOptions="Center" Padding="5"/>
+                <Entry x:Name="IPAddressEntry" WidthRequest="200" HeightRequest="40" HorizontalOptions="End"/>
+            </HorizontalStackLayout>
+            
+            <StackLayout WidthRequest="500" Padding="15">
+                <Border x:Name="MainChatScrollView" WidthRequest="400">
+                    <Editor x:Name="ChatDisplayBox" HeightRequest="300" IsReadOnly="True"/>
+                </Border>
+            </StackLayout>
+
+        </VerticalStackLayout>
+
+    </HorizontalStackLayout>
+
+</ContentPage>

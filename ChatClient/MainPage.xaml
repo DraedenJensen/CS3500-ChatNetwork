@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<!-- Author:    Draeden Jensen and John Haraden
+     Date:      03-23-2023
+     Course:    CS 3500, University of Utah, School of Computing
+     Copyright: CS 3500, Draeden Jensen, and John Haraden - This work may not 
+                be copied for use in Academic Coursework.
+
+     We, Draeden Jensen and John Haraden, certify that this code was written from scratch and
+     we did not copy it in part or whole from another source.  All 
+     references used in the completion of the assignments are cited 
+     in the README file.
+
+     File Contents:
+     Contains a graphical user interface for a client window which can connect to a remote chat
+     server. This file contains the XML code for creating the visual elements.
+-->
+    
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ChatClient.MainPage">
+
+    <VerticalStackLayout
+            Spacing="25"
+            Padding="60,0"
+            VerticalOptions="Start">
+
+        <Grid x:Name="UserEntryGrid" HeightRequest="250">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition x:Name="LeftLabels" Width="500" />
+                <ColumnDefinition x:Name="CenterEntries" Width="500"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition x:Name="BufferRow" Height="30"/>
+                <RowDefinition x:Name="TopRow" Height="50"/>
+                <RowDefinition x:Name="SecondRow" Height="50"/>
+                <RowDefinition x:Name="ThirdRow" Height="50"/>
+                <RowDefinition x:Name="BottomRow" Height="50"/>
+            </Grid.RowDefinitions>
+        </Grid>
+
+
+        <Border x:Name="MainChatScrollView">
+            <Editor x:Name="ChatDisplayBox" IsReadOnly="True"/>
+        </Border>
+
+    </VerticalStackLayout>
+
+</ContentPage>
+
+    
